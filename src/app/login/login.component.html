@@ -1,0 +1,28 @@
+<section>
+
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" fxLayout="column" fxLayoutAlign="space-evenly center">
+
+
+
+    <mat-form-field fxFlexOffset="100px">
+      <input type="email" matInput placeholder="Please enter the email" required name="email" ngModel #email="ngModel"
+        email>
+      <mat-hint *ngIf="email.untouched">Email is required</mat-hint>
+      <mat-error>Email is invalid</mat-error>
+    </mat-form-field>
+
+    <mat-form-field fxFlexOffset="10px">
+      <input type="password" matInput placeholder="Please enter the password" required name="password" ngModel>
+    </mat-form-field>
+
+    <div fxLayout="row" fxLayoutGap="50px">
+      <button type="button" mat-raised-button mat-button color="warn" (click)="onReset(f)">Reset</button>
+
+      <button type="submit" mat-raised-button mat-button color="accent">Login</button>
+
+    </div>
+
+
+  </form>
+
+</section>
